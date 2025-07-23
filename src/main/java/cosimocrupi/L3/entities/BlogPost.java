@@ -1,9 +1,6 @@
 package cosimocrupi.L3.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,6 +13,8 @@ import java.util.UUID;
 @Getter
 @Setter
 public class BlogPost {
+    @Id
+    @GeneratedValue
     @Setter(AccessLevel.NONE)
     protected UUID id;
     protected String title;
