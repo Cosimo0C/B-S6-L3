@@ -34,4 +34,12 @@ public class AuthorService {
         Author fnd= this.findById(authorId);
         this.authorRepository.delete(fnd);
     }
+    public Author finddByIdAndUpdate(UUID authorId, AuthorPayload payload){
+        Author fnd=this.findById(authorId);
+        fnd.setName(payload.getName());
+        fnd.setSurname(payload.getSurname());
+        fnd.setEmail(payload.getEmail());
+        fnd.setDataDiNascita(payload.getDataDiNascita());
+        return authorRepository.save(fnd);
+    }
 }

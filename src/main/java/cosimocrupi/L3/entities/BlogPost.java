@@ -1,5 +1,6 @@
 package cosimocrupi.L3.entities;
 
+import cosimocrupi.L3.enums.Categoria;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -19,6 +20,7 @@ public class BlogPost {
     protected UUID id;
     protected String title;
     protected String content;
+    protected Categoria categoria;
     protected String cover;
     protected LocalDate timeRead;
 
@@ -26,11 +28,10 @@ public class BlogPost {
     @JoinColumn(name = "author_id")
     private Author author;
 
-    public BlogPost(UUID id, String title, String content, String cover, LocalDate timeRead) {
+    public BlogPost(String title, String content,Categoria categoria, LocalDate timeRead) {
         this.id = id;
         this.title = title;
         this.content = content;
-        this.cover = cover;
         this.timeRead = timeRead;
     }
 }
