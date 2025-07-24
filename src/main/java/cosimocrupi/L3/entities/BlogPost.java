@@ -29,7 +29,6 @@ public class BlogPost {
     private Author author;
 
     public BlogPost(String title, String content,Categoria categoria, LocalDate timeRead) {
-        this.id = id;
         this.title = title;
         this.content = content;
         this.timeRead = timeRead;
